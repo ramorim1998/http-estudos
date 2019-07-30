@@ -21,4 +21,7 @@ export class UsuarioService {
   erased(id: number){
     return this.http.delete(`${this.API}/${id}`).pipe(take(1));
   }
+  update(user: Usuario){
+    return this.http.put(`${this.API}/${user.id}`, user).pipe(take(1));
+  }
 }

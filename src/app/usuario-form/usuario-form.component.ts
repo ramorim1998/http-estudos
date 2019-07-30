@@ -17,17 +17,21 @@ export class UsuarioFormComponent implements OnInit {
   ngOnInit() {
     const usuario = this.route.snapshot.data['usuario']
     this.userForm = this.userBuilder.group({
-      id:[usuario.id],
+      id: [usuario.id],
       name: [usuario.name, [Validators.required, Validators.minLength(3)]],
       username: [usuario.username, [Validators.required, Validators.minLength(3)]],
       email: [usuario.email, [Validators.required, Validators.email]]
     })
   }
   onSubmit() {
-    this.user.create(this.userForm.value).subscribe();
+    if (this.userForm.value.id) {
+      this.user.update(this.userForm.value).subscribe();
+    } else {
+      this.user.create(this.userForm.value).subscribe();
+    }
   }
-  
-  onDelete(id: number){
+
+  onDelete(id: number) {
     this.user.erased(id);
   }
 
