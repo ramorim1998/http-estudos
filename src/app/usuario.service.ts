@@ -15,4 +15,10 @@ export class UsuarioService {
   create(user: Usuario){
     return this.http.post(this.API, user).pipe(take(1));
   }
+  loadByID(id: number){
+    return this.http.get<Usuario>(`${this.API}/${id}`).pipe(take(1));
+  }
+  erased(id: number){
+    return this.http.delete(`${this.API}/${id}`).pipe(take(1));
+  }
 }

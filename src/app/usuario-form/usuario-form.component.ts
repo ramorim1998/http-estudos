@@ -1,6 +1,9 @@
+import { Usuario } from './../domains/usuario';
+import { ActivatedRoute } from '@angular/router';
 import { UsuarioService } from './../usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-usuario-form',
@@ -9,17 +12,23 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class UsuarioFormComponent implements OnInit {
   userForm: FormGroup;
-  constructor(private userBuilder: FormBuilder, private user:UsuarioService) { }
+  constructor(private userBuilder: FormBuilder, private user: UsuarioService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    const usuario = this.route.snapshot.data['usuario']
     this.userForm = this.userBuilder.group({
-      name: [null,[Validators.required, Validators.minLength(3)]],
-      username:[null,[Validators.required, Validators.minLength(3)]],
-      email:[null,[Validators.required, Validators.email]]
+      id:[usuario.id],
+      name: [usuario.name, [Validators.required, Validators.minLength(3)]],
+      username: [usuario.username, [Validators.required, Validators.minLength(3)]],
+      email: [usuario.email, [Validators.required, Validators.email]]
     })
   }
-  onSubmit(){
+  onSubmit() {
     this.user.create(this.userForm.value).subscribe();
+  }
+  
+  onDelete(id: number){
+    this.user.erased(id);
   }
 
 }

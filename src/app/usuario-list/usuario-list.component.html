@@ -7,7 +7,7 @@
       <li class="list-group-item">{{user.name}}</li>
       <li class="list-group-item">{{user.username}}</li>
       <li class="list-group-item">{{user.email}}</li>
-      <button>Atualizar</button><button>dele</button>
+      <button (click)="onEdit(user.id)">Atualizar</button><button (click)= "onDelete(user.id)">delete</button>
     </ul>
     <button class="btn btn-primary" routerLink = '/novo-usuario'>Novo usuario</button>
   </div>
