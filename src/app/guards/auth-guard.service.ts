@@ -4,7 +4,7 @@ import { CanActivate, Resolve } from '@angular/router';
 import { Usuario } from '../domains/usuario';
 import { of } from 'rxjs';
 
-
+// guarda de rota e separação de PUT e POST;
 @Injectable({
   providedIn: 'root'
 })
