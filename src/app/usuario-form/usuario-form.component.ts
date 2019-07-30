@@ -31,8 +31,4 @@ export class UsuarioFormComponent implements OnInit {
     }
   }
 
-  onDelete(id: number) {
-    this.user.erased(id);
-  }
-
 }

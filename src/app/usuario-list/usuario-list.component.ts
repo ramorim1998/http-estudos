@@ -23,6 +23,6 @@ export class UsuarioListComponent implements OnInit {
     this.router.navigate(['/editar',id],{relativeTo: this.route});
   }
   onDelete(id:number){
-    this.user.erased(id);
+    this.user.eraser(id);
   }
 }

@@ -18,8 +18,10 @@ export class UsuarioService {
   loadByID(id: number){
     return this.http.get<Usuario>(`${this.API}/${id}`).pipe(take(1));
   }
-  erased(id: number){
+  eraser(id: number){
+    console.log('aaa');
     return this.http.delete(`${this.API}/${id}`).pipe(take(1));
+    
   }
   update(user: Usuario){
     return this.http.put(`${this.API}/${user.id}`, user).pipe(take(1));

@@ -1,13 +1,13 @@
 <div class="card" style="width: 18rem;">
     <div class="card-header">
-      Uusuarios
+      Usuarios
     </div>
     <div class="ok" *ngIf="usuarios$ | async; else loading">
     <ul class="list-group list-group-flush" *ngFor="let user of usuarios$ | async ">
       <li class="list-group-item">{{user.name}}</li>
       <li class="list-group-item">{{user.username}}</li>
       <li class="list-group-item">{{user.email}}</li>
-      <button (click)="onEdit(user.id)">Atualizar</button><button (click)= "onDelete(user.id)">delete</button>
+      <button (click)="onEdit(user.id)">Atualizar</button><button (click)= "onDelete(user)">delete</button>
     </ul>
     <button class="btn btn-primary" routerLink = '/novo-usuario'>Novo usuario</button>
   </div>
