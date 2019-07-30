@@ -1,10 +1,18 @@
 <div class="card" style="width: 18rem;">
     <div class="card-header">
-      Featured
+      Uusuarios
     </div>
-    <ul class="list-group list-group-flush" *ngFor="let user of users">
-      <li class="list-group-item">{{user.name}}<button>Atualizar</button><button>deletar</button></li>
+    <div class="ok" *ngIf="usuarios$ | async; else loading">
+    <ul class="list-group list-group-flush" *ngFor="let user of usuarios$ | async ">
       <li class="list-group-item">{{user.name}}</li>
-      <li class="list-group-item">{{user.name}}</li>
+      <li class="list-group-item">{{user.username}}</li>
+      <li class="list-group-item">{{user.email}}</li>
+      <button>Atualizar</button><button>dele</button>
     </ul>
+    <button class="btn btn-primary" routerLink = '/novo-usuario'>Novo usuario</button>
   </div>
+</div>
+  <ng-template #loading>
+      <span>carregando usuarios...</span>
+  </ng-template>
+  

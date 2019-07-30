@@ -7,7 +7,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {path:'home',component:UsuarioListComponent},
   {path:'',pathMatch:'full',redirectTo:'home'},
-  {path:'novo-usuario',component:UsuarioFormComponent}
+  {path:'novo-usuario',component:UsuarioFormComponent},
+  {path:'editar/:id',component:UsuarioFormComponent}
 ];
 
 @NgModule({
