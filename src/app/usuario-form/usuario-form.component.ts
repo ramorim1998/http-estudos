@@ -1,3 +1,4 @@
+import { UsuarioService } from './../usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -8,7 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class UsuarioFormComponent implements OnInit {
   userForm: FormGroup;
-  constructor(private userBuilder: FormBuilder) { }
+  constructor(private userBuilder: FormBuilder, private user:UsuarioService) { }
 
   ngOnInit() {
     this.userForm = this.userBuilder.group({
@@ -16,6 +17,9 @@ export class UsuarioFormComponent implements OnInit {
       username:[null,[Validators.required, Validators.minLength(3)]],
       email:[null,[Validators.required, Validators.email]]
     })
+  }
+  onSubmit(){
+    this.user.create(this.userForm.value).subscribe();
   }
 
 }
