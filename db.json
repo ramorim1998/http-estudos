@@ -1,16 +1,28 @@
 {
   "user": [
     {
-      "name": "lucas",
-      "username": "lulu",
-      "email": "lulu@gmail.com",
-      "id": 4
-    },
-    {
       "id": 5,
       "name": "silvana",
       "username": "silv",
       "email": "silvana.keka@gmail.com"
+    },
+    {
+      "id": 6,
+      "name": "lucas",
+      "username": "lulu",
+      "email": "silvana.keka@gmail.com"
+    },
+    {
+      "id": 7,
+      "name": "rafae",
+      "username": "fae",
+      "email": "lulu@gmail.com"
+    },
+    {
+      "id": 8,
+      "name": "bruno",
+      "username": "lulu",
+      "email": "kekel@hotmail.com"
     }
   ]
 }

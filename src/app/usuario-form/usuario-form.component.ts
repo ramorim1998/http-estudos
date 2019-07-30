@@ -25,8 +25,12 @@ export class UsuarioFormComponent implements OnInit {
   }
   onSubmit() {
     if (this.userForm.value.id) {
+      alert("usuario alterado com sucesso");
       this.user.update(this.userForm.value).subscribe();
+      
     } else {
+      alert("usuario criado com sucesso");
+
       this.user.create(this.userForm.value).subscribe();
     }
   }
