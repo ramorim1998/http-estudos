@@ -2,6 +2,7 @@ import { Usuario } from './domains/usuario';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { delay, take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,7 @@ export class UsuarioService {
   loadByID(id: number){
     return this.http.get<Usuario>(`${this.API}/${id}`).pipe(take(1));
   }
-  eraser(id: number){
-    console.log('aaa');
+  eraser(id: number): Observable<any>{
     return this.http.delete(`${this.API}/${id}`).pipe(take(1));
     
   }

@@ -22,7 +22,8 @@ export class UsuarioListComponent implements OnInit {
   onEdit(id: number){
     this.router.navigate(['/editar',id],{relativeTo: this.route});
   }
-  onDelete(id:number){
-    this.user.eraser(id);
+  onDelete(user){
+    this.user.eraser(user.id).subscribe();
+    window.location.reload();
   }
 }

@@ -1,24 +1,6 @@
 {
   "user": [
     {
-      "id": 1,
-      "name": "bruno",
-      "username": "fael",
-      "email": "araujor920@gmail.com"
-    },
-    {
-      "id": 2,
-      "name": "gyovanna",
-      "username": "gyo",
-      "email": "gyovannac@gmail.com"
-    },
-    {
-      "id": 3,
-      "name": "luke",
-      "username": "zoin",
-      "email": "gyovannac@gmail.com"
-    },
-    {
       "name": "lucas",
       "username": "lulu",
       "email": "lulu@gmail.com",
